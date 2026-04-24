@@ -8,7 +8,8 @@ const HookCounter2 = () => {
 
     const handleIncrement5 = () => {
         for(let i = 0; i < 5 ; i++){
-            setCount(count+1);
+            // setCount(count+1); unsafe way
+            setCount(prevCount => prevCount+1);
         }
     };
 
@@ -16,8 +17,8 @@ const HookCounter2 = () => {
         <div>
             <span>Count : {count} </span>
             <button onClick={() => setCount(initialCount)}> Reset </button>
-            <button onClick={() => setCount(count+1)}> Increment </button>
-            <button onClick={() => setCount(count-1)}> Decrement </button>
+            <button onClick={() => setCount(prevCount => prevCount+1)}> Increment </button>
+            <button onClick={() => setCount(prevCount => prevCount-1)}> Decrement </button>
             <button onClick={handleIncrement5}>Increment by 5 </button>
 
         </div>
