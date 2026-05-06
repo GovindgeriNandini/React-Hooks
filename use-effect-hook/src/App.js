@@ -3,13 +3,14 @@ import './App.css';
 import HookCounter from './components/HookCounter';
 import HookCounterOne from './components/HookCounterOne';
 import Coordinates from './components/Coordinates';
+import Counter from './components/Counter';
 
 function App() {
   
   return (
     <div className="App">
      
-      <Coordinates />
+      <Counter />
       
     </div>
   );
