@@ -5,13 +5,13 @@ import HookCounterOne from './components/HookCounterOne';
 import Coordinates from './components/Coordinates';
 import Counter from './components/Counter';
 
+import DataFetching from './components/DataFetching';
+
 function App() {
   
   return (
     <div className="App">
-     
-      <Counter />
-      
+     <DataFetching />      
     </div>
   );
 }
