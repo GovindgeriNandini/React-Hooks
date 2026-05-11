@@ -1,24 +1,11 @@
 import { UserContext, ChannelContext } from "../App";
-import React from "react";
-
+import { useContext } from "react";
 const ComponentF = () => {
+    const topic = useContext(UserContext);
+    const channel = useContext(ChannelContext);
   return (
     <div>
-        <UserContext.Consumer>
-            {topic => {
-                return (
-                    <ChannelContext.Consumer>
-                        {channel => {
-                            return (
-                                <h2>
-                                    React topic : {topic} , {channel}
-                                </h2>
-                            )
-                        }}
-                    </ChannelContext.Consumer>
-                )
-            }}
-        </UserContext.Consumer>
+        <h2>{topic} - {channel}</h2>
     </div>
   );
 
