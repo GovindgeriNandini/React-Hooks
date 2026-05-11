@@ -1,19 +1,27 @@
-import { UserContext } from "../App";
+import { UserContext, ChannelContext } from "../App";
 import React from "react";
 
-
 const ComponentF = () => {
-    return(
-       
-            <UserContext.Consumer >
-                {topic => {
-                    return <div>React topic : {topic}</div>
-                }}
-                
-            </UserContext.Consumer>
-           
-        
-    )
-}
+  return (
+    <div>
+        <UserContext.Consumer>
+            {topic => {
+                return (
+                    <ChannelContext.Consumer>
+                        {channel => {
+                            return (
+                                <h2>
+                                    React topic : {topic} , {channel}
+                                </h2>
+                            )
+                        }}
+                    </ChannelContext.Consumer>
+                )
+            }}
+        </UserContext.Consumer>
+    </div>
+  );
+
+};
 
 export default ComponentF;
